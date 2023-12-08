@@ -53,6 +53,7 @@ const DetailBuku = () => {
         <div className="items-start">
           <div className="mr-4 md:mr-0 md:flex justify-end md:self-start md:mb-4">
             {/* Logo Keranjang */}
+            <Link to="/users/keranjang">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="100"
@@ -70,6 +71,7 @@ const DetailBuku = () => {
                 fill="currentColor"
               />
             </svg>
+            </Link>
           </div>
           <h2 className="text-3xl font-bold mb-4 text-center">
             {detailBuku.judul}

@@ -99,7 +99,7 @@ const RiwayatPesanan = () => {
   ];
 
   return (
-    <div className="container mx-auto p-8">
+    <div className="min-h-screen bg-[#FDF9EC] p-8">
       <h1 className="text-3xl font-semibold mb-6">Riwayat Pesanan Buku</h1>
       <table className="min-w-full bg-white border border-gray-300">
         <thead>

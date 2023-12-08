@@ -22,8 +22,8 @@ const CartItem = ({ product, onIncrease, onDecrease, onDelete }) => {
   };
 
   return (
-    <tr className="border-b-2 py-4">
-      <td className="px-4 py-2">
+    <tr className="border-b-2 py-4 bg-[#FDF9EC]">
+      <td className="px-4 py-2 bg-[#FDF9EC]">
         <img src={image} alt={name} className="w-30 h-25 object-cover rounded" />
       </td>
       <td className="px-4 py-2">

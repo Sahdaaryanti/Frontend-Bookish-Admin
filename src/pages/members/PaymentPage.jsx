@@ -44,7 +44,7 @@ const PesanBuku = () => {
   };
 
   return (
-    <div className="container mx-auto p-8">
+    <div className="min-h-screen bg-[#FDF9EC] p-8">
       <h1 className="text-3xl font-semibold mb-6">Pesan Buku</h1>
       <form onSubmit={handleSubmit} className="max-w-md">
         <div className="mb-4">
@@ -90,7 +90,7 @@ const PesanBuku = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          className="bg-[#677C52] text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
         >
           Pesan Buku
         </button>
