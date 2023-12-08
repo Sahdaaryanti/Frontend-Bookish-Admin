@@ -106,7 +106,9 @@ const DetailUser = () => {
         {activeTab === "orders" && (
           <>
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              <Link to="/users/shop">
               Pesanan Saya
+              </Link>
             </h3>
             {/* Display order information here */}
           </>
