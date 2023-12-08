@@ -129,8 +129,8 @@ const PaymentForm = () => {
   
       // Create payment with formData
       const formData = new FormData();
-      formData.append('provider', provider); // Make sure 'provider' is the correct key
-      formData.append('noPayment', noPayment); // Make sure 'noPayment' is the correct key
+      formData.append('provider', provider);
+      formData.append('noPayment', noPayment); 
   
       const response = await createPayment(formData, token);
       const { transactionToken } = response;
@@ -168,7 +168,7 @@ const PaymentForm = () => {
   
 
   return (
-    <div className="flowbite-container">
+    <div className="flowbite-container min-h-screen m-10">
       <div className="flowbite-row">
         <div className="flowbite-col-md-6">
           <h2>Payment Form</h2>

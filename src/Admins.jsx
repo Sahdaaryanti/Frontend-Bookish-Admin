@@ -12,6 +12,8 @@ import BukuRekomendasi from "./pages/admins/BukuRekomendasi";
 import KategoriAdmin from "./pages/admins/Kategori";
 import RegisterAdminPages from "./pages/admins/Registrasi";
 import LoginAdmins from "./pages/admins/Login";
+// import ShopAdmins from "./pages/admins/riwayatPesanan";
+// import DetailShopAdmins from "./pages/admins/detailRiwayatPEsanan"
 
 function AppAdmin() {
   return (
@@ -31,6 +33,8 @@ function AppAdmin() {
                 <Route path={"admins/detail-user"} element={<DetailUser />} />
                 <Route path={"admins/form-akun"} element={<UpdateDetailUserForm />} />
                 <Route path={"admins/login"} element={<LoginAdmins />} />
+                {/* <Route path={"admins/shop"} element={<ShopAdmins />} />
+                <Route path={"admins/shop/:id"} element={<DetailShopAdmins />} /> */}
             </Routes>
         </Router>
     </>

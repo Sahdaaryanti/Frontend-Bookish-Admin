@@ -4,8 +4,7 @@ import PaymentForm from "../../components/members/PaymentForm";
 
 const PaymentPage = () => {
   return (
-    <div>
-      <h1>Payment Page</h1>
+    <div className="w-full">
       <PaymentForm />
     </div>
   );

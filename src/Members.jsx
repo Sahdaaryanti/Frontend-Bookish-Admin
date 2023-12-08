@@ -13,6 +13,9 @@ import DetailBuku from "./pages/members/DetailBuku";
 import PrivacyPolicy from "./pages/members/PrivacyPolice";
 import AboutUs from "./pages/members/AboutUs";
 import PaymentPage from "./pages/members/PaymentPage";
+import Shop from "./pages/members/riwayatPesanan";
+import ShopDetails from "./pages/members/detailRiwayatPesanan"
+import Keranjang from "./pages/members/keranjang"
 
 function AppUsers() {
   return (
@@ -33,6 +36,9 @@ function AppUsers() {
                 <Route path={"users/privacy-policy"} element={<PrivacyPolicy />} />
                 <Route path={"users/about-us"} element={<AboutUs />} />
                 <Route path={"users/payment-page"} element={<PaymentPage />} />
+                <Route path={"users/shop"} element={<Shop />}/>
+                <Route path={"users/shop/:id"} element={<ShopDetails />}/>
+                <Route path={"users/keranjang"} element={<Keranjang />} />
             </Routes>
           <Footer /> 
         </Router>
