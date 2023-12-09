@@ -86,7 +86,7 @@ const DashboardBuku = () => {
                 <td className="border p-2">{searchedBook.judul}</td>
                 <td className="border p-2">
                   <Link to={`/admins/update-buku/${searchedBook.id}`}>
-                    <button className="bg-yellow-500 text-white p-2 mr-2">
+                    <button className="bg-blue-500 text-white p-2 p-2 mr-2">
                       Update
                     </button>
                   </Link>

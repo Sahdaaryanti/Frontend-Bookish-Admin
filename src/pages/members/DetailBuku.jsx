@@ -3,6 +3,7 @@ import { getBukuById } from "../../modules/fetch/members/Buku";
 import { getAllPenulis } from "../../modules/fetch/members/penulis";
 import { getAllPenerbit } from "../../modules/fetch/members/penerbit";
 import { getAllFileBuku } from "../../modules/fetch/members/fileBuku";
+import { getAllStocks } from "../../modules/fetch//members/gudang";
 import { Link, useParams } from "react-router-dom";
 
 const DetailBuku = () => {
@@ -11,6 +12,7 @@ const DetailBuku = () => {
   const [penulis, setPenulis] = useState({});
   const [penerbit, setPenerbit] = useState({});
   const [fileBuku, setFileBuku] = useState({});
+  const [stock, setStock] = useState(null);
 
   useEffect(() => {
     const fetchBookAndPenulis = async () => {
@@ -20,11 +22,15 @@ const DetailBuku = () => {
 
         if (result) {
           const penulisData = await getAllPenulis();
-          const penulisBook = penulisData.find((p) => p.id === result.penulisId);
+          const penulisBook = penulisData.find(
+            (p) => p.id === result.penulisId
+          );
           setPenulis(penulisBook || {});
 
           const penerbitData = await getAllPenerbit();
-          const penerbitBook = penerbitData.find((p) => p.id === result.penerbitId);
+          const penerbitBook = penerbitData.find(
+            (p) => p.id === result.penerbitId
+          );
           setPenerbit(penerbitBook || {});
 
           // Ambil data file buku
@@ -33,10 +39,24 @@ const DetailBuku = () => {
 
           // Periksa apakah file bukuData bukan array kosong
           if (Array.isArray(fileBukuData) && fileBukuData.length > 0) {
-            const fileBukuBook = fileBukuData.find((file) => file.bukuId === result.id);
+            const fileBukuBook = fileBukuData.find(
+              (file) => file.bukuId === result.id
+            );
             setFileBuku(fileBukuBook || {});
           } else {
             console.error("File buku data tidak valid atau kosong");
+          }
+
+          const stockData = await getAllStocks();
+
+          // Check if stockData is an array and not empty
+          if (Array.isArray(stockData) && stockData.length > 0) {
+            const stockBook = stockData.find(
+              (stock) => stock.bukuId === result.id
+            );
+            setStock(stockBook || {});
+          } else {
+            console.error("Stock data tidak valid atau kosong");
           }
         }
       } catch (error) {
@@ -53,7 +73,6 @@ const DetailBuku = () => {
         <div className="items-start">
           <div className="mr-4 md:mr-0 md:flex justify-end md:self-start md:mb-4">
             {/* Logo Keranjang */}
-            <Link to="/users/keranjang">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="100"
@@ -71,7 +90,6 @@ const DetailBuku = () => {
                 fill="currentColor"
               />
             </svg>
-            </Link>
           </div>
           <h2 className="text-3xl font-bold mb-4 text-center">
             {detailBuku.judul}
@@ -90,6 +108,11 @@ const DetailBuku = () => {
               <p>Penerbit: {penerbit.nama}</p>
               <p>ISBN: {detailBuku.isbn}</p>
               <p>Tahun Terbit: {detailBuku.tahunTerbit}</p>
+              {stock && (
+                <div>
+                  <p className="">Stok Buku: {stock.stok || "N/A"}</p>
+                </div>
+              )}
               <p className="mt-4 text-lg text-[#3046BC] font-bold mb-2">
                 Harga: {detailBuku.harga}
               </p>
@@ -97,7 +120,7 @@ const DetailBuku = () => {
           </div>
           <div className="flex justify-center mt-4">
             <button className="bg-[#677C52] text-white p-2 rounded m-5">
-              <Link to="/users/payment-page">Buy Now</Link>
+              <Link to="/users/shop">Buy Now</Link>
             </button>
           </div>
         </div>

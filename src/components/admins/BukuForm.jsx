@@ -238,6 +238,7 @@ const BookForm = ({ onSubmit, initialData }) => {
           id="kategoriId"
           name="kategoriId"
           className="border rounded w-full py-2 px-3"
+          onChange={handleChange}
         />
       </div>
 

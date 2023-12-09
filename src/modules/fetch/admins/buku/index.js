@@ -9,18 +9,18 @@ const createBuku = async (formData) => {
   }
 };
 
-const updateBuku = async (bookId, updatedData) => {
+const updateBuku = async (id, formData) => {
   try {
-    const response = await instance.put(`/buku/${bookId}`, updatedData);
+    const response = await instance.put(`/buku/${id}`, formData);
     return response.data;
   } catch (error) {
     throw error.response.data;
   }
 };
 
-const deleteBuku = async (bookId) => {
+const deleteBuku = async (id) => {
   try {
-    const response = await instance.delete(`/buku/${bookId}`);
+    const response = await instance.delete(`/buku/${id}`);
     return response.data;
   } catch (error) {
     throw error.response.data;
