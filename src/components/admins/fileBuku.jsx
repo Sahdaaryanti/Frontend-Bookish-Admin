@@ -44,10 +44,8 @@
 
 // export default FileUpload;
 
-
 import { useState } from 'react';
 import { updateFileBuku, createFileBuku } from '../../modules/fetch/admins/fileBuku';
-
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
@@ -84,17 +82,17 @@ const FileUpload = () => {
   };
 
   return (
-    <div>
-      <h1>File Upload</h1>
-      <div>
-        <label htmlFor="bukuId">Buku ID:</label>
-        <input type="text" id="bukuId" value={bukuId} onChange={handleBukuIdChange} />
+    <div className='m-5 max-w-md mx-auto'>
+      <h1 className='text-lg font-bold'>File Upload</h1>
+      <div className='m-5 max-w-md mx-auto w-full'>
+        <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor="bukuId">Buku ID:</label>
+        <input className="border border-black rounded w-full py-2 px-3" type="text" id="bukuId" value={bukuId} onChange={handleBukuIdChange} />
       </div>
-      <div>
+      <div className='m-5 max-w-md mx-auto'>
         <label htmlFor="urlFile">File:</label>
-        <input type="file" id="urlFile" className="border rounded w-full py-2 px-3" onChange={handleFileChange} />
+        <input type="file" id="urlFile" className="border border-black rounded w-full py-2 px-3" onChange={handleFileChange} />
       </div>
-      <button onClick={handleUpload}>Upload</button>
+      <button className='bg-[#677C52] hover:bg-[#B7B7A4] text-white font-bold py-2 px-4 rounded' onClick={handleUpload}>Upload</button>
     </div>
   );
 };

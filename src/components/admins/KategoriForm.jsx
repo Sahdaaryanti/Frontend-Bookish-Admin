@@ -56,7 +56,7 @@ const CategoryForm = ({ onSubmit, initialData }) => {
 
       <button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-[#677C52] hover:bg-[#B7B7A4] text-white font-bold py-2 px-4 rounded"
       >
         {initialData ? 'Update' : 'Submit'}
       </button>
