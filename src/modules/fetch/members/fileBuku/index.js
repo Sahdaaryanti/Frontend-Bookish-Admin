@@ -3,7 +3,8 @@ import { instance } from '../../../axios/index';
 // Create a new file buku
 const createFileBuku = async (fileData) => {
   try {
-    const response = await instance.post('/file-buku', fileData);
+    // Ganti endpoint sesuai dengan endpoint ImageKit di sisi server
+    const response = await instance.post('/https://ik.imagekit.io/duz42vuyd', fileData);
     return response.data;
   } catch (error) {
     throw error.response.data;
@@ -13,7 +14,8 @@ const createFileBuku = async (fileData) => {
 // Update an existing file buku
 const updateFileBuku = async (fileId, fileData) => {
   try {
-    const response = await instance.put(`/file-buku/${fileId}`, fileData);
+    // Ganti endpoint sesuai dengan endpoint ImageKit di sisi server
+    const response = await instance.put(`/https://ik.imagekit.io/duz42vuyd/${fileId}`, fileData);
     return response.data;
   } catch (error) {
     throw error.response.data;
@@ -23,7 +25,8 @@ const updateFileBuku = async (fileId, fileData) => {
 // Get all file buku
 const getAllFileBuku = async () => {
   try {
-    const response = await instance.get('/file-buku/all');
+    // Ganti endpoint sesuai dengan endpoint ImageKit di sisi server
+    const response = await instance.get('/https://ik.imagekit.io/duz42vuyd/all');
     return response.data;
   } catch (error) {
     throw error.response.data;
